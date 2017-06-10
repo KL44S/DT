@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html ng-app="DT">
+    <head>
+        <meta charset="UTF-8">
+        <title>Usuarios</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--CSS's-->
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+
+    <body ng-controller="mainController">
+
+        <div class="container">
+            <h2>Participantes</h2>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="user in users" ng-click="showUserTeam(user)">{{user.name + " " + user.lastname}}</li>
+            </ul>
+        </div>
+
+        <!--Scripts-->
+        <script src="js/angular.min.js"></script>
+        <script src="modules/module.js"></script>
+        <script src="constants/constants.js"></script>
+        <script src="services/userService.js"></script>
+        <script src="controllers/mainController.js"></script>
+
+    </body>
+</html>
