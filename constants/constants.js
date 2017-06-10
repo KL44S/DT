@@ -6,7 +6,9 @@
         var constants = {
             baseUri: "http://localhost:50325/api/",
             userResource: "User",
-            userTeamUri: "userteam?userId="
+            userTeamResource: "MatchweekUserTeam",
+            userIdParameter: "?UserId=",
+            userTeamUri: "userteam.html?userId="
         };
 
         return constants;

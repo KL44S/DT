@@ -1,0 +1,42 @@
+﻿body {
+font-family: 'Titillium Web', sans-serif;
+}
+
+.user:hover {
+    background-color: #EDEDED;
+    cursor: pointer;
+}
+
+.Arquero {
+    background-color: #EAFFF9;
+}
+
+.Volante {
+    background-color: #FFFFE9;
+}
+
+.Defensor {
+    background-color: #F1EEFF;
+}
+
+.Delantero {
+    background-color: #FFEEF0;
+}
+
+.suplente {
+    background-color: #F7F7F7 !important;
+    color: #979797 !important;
+}
+
+.main-info {
+    font-size: 16px;
+    margin-bottom: 20px !important;
+}
+
+.main-info-item {
+    margin: 5px;
+}
+
+.table tr:hover {
+    cursor: pointer;
+}

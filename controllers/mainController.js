@@ -8,7 +8,7 @@
 	    });
 
 	    $scope.showUserTeam = function (user) {
-	        window.location = constants.userTeamUri + user.userId;
+	        window.location = constants.userTeamUri + user.UserId;
 	    };
 
 	}]);

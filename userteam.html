@@ -8,16 +8,61 @@
     <!--CSS's-->
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body ng-controller="userTeamController">
 
+    <div class="container">
+
+        <h2>Equipo</h2>
+        <hr />
+
+        <div class="main-info row">
+            <div class="col-md-12 main-info-item">
+                <strong class="col-md-2">NOMBRE: </strong><span class="col-md-5">{{userTeam.Name}}</span>
+            </div>
+
+            <div class="col-md-12 main-info-item">
+                <strong class="col-md-2">DT: </strong><span class="col-md-5">{{userTeam.User.Name + " " + userTeam.User.Lastname}}</span>
+            </div>
+
+            <div class="col-md-12 main-info-item">
+                <strong class="col-md-2">PUNTAJE TOTAL: </strong><span class="col-md-5">{{userTeam.Score}}</span>
+            </div>
+        </div>
+
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>POSICION</th>
+                    <th>NOMBRE</th>
+                    <th>CLUB</th>
+                    <th>PUNTAJE TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="player in userTeam.Players" ng-if="player.IsTitular" class="{{player.Position.Name}}" ng-click="showScores(player);">
+                    <td>{{player.Position.Name}}</td>
+                    <td>{{player.Name + " " + player.LastName}}</td>
+                    <td>{{player.Club.Name}}</td>
+                    <td>{{player.FinalScore}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
     <!--Scripts-->
     <script src="js/angular.min.js"></script>
+    <script src="js/ui-bootstrap-custom-0.12.1.min.js"></script>
+    <script src="js/ui-bootstrap-custom-tpls-0.12.1.min.js"></script>
     <script src="modules/module.js"></script>
     <script src="constants/constants.js"></script>
     <script src="services/userTeamService.js"></script>
     <script src="controllers/userTeamController.js"></script>
+    <script src="controllers/scoresController.js"></script>
 
 </body>
 </html>

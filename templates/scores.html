@@ -1,0 +1,56 @@
+﻿<div class="container-fluid" style=" margin: 10px;margin-top: 20px; margin-bottom: 20px;">
+    <div class="main-info row">
+
+        <div class="col-md-12 main-info-item">
+            <strong class="col-md-4">JUGADOR: </strong><span class="col-md-5">{{player.player.Name + " " + player.player.LastName}}</span>
+        </div>
+
+        <div class="col-md-12 main-info-item">
+            <strong class="col-md-4">PUNTAJE TOTAL: </strong><span class="col-md-5">{{player.player.FinalScore}}</span>
+
+        </div>
+
+        <div class="col-md-12 main-info-item">
+            <strong class="col-md-4">% DE EQUIPOS EN LOS QUE APARECE: </strong><span class="col-md-5">{{player.player.PlayerDataPerMatchweek.UsersPercentWhoHaveIt + "%"}}</span>
+        </div>
+
+        <div class="col-md-12 main-info-item">
+            <strong class="col-md-4">K: </strong><span class="col-md-5">{{player.k}}</span>
+        </div>
+    </div>
+
+    <h3>Puntajes de los diarios</h3>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th ng-repeat="score in player.player.PlayerMatchweekScores">{{score.Score.SourceDescription}}</th>
+                <th>Puntaje final</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td ng-repeat="score in player.player.PlayerMatchweekScores">{{score.ScoreValue}}</td>
+                <td>{{totalScore}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 ng-if="player.player.PlayerMatchweekSpecialScores.length > 0">Puntajes de eventos</h3>
+    <table ng-if="player.player.PlayerMatchweekSpecialScores.length > 0" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Evento</th>
+                <th>Puntaje básico</th>
+                <th>Puntaje final</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="specialScore in player.player.PlayerMatchweekSpecialScores">
+                <td>{{specialScore.SpecialScore.Description}}</td>
+                <td>{{specialScore.BasicScoreValue}}</td>
+                <td>{{specialScore.ScoreValue}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
